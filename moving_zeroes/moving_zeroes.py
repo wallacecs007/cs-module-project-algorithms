@@ -7,14 +7,23 @@ Returns: a List of integers
 def moving_zeroes(arr):
     # Your code here
 
-    for i in range(0, len(arr) - 1):
-        for j in range(0, len(arr) - 1):
-            if arr[j] == 0:
-                temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
+    arr2 = []
 
-    return arr
+    # Loops through once.
+    for i in range(0, len(arr)):
+        if arr[i] == 0:
+            arr2.append(arr[i])
+        else:
+            arr2.insert(0, arr[i])
+
+    # for i in range(0, len(arr) - 1):
+    #     for j in range(0, len(arr) - 1):
+    #         if arr[j] == 0:
+    #             temp = arr[j]
+    #             arr[j] = arr[j + 1]
+    #             arr[j + 1] = temp
+
+    return arr2
 
 
 if __name__ == '__main__':
